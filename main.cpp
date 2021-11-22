@@ -32,12 +32,7 @@ void testProgram(LimitedStack<T, A>& stack) {
 }
 
 int main() {
-    LimitedStack<int, A> a;
-    LimitedStack<int, A> aa;
-    LimitedStack<float, A> c;
     
-    LimitedStack<Money, A> money;
-    testProgram(money);
     return 0;
 }
 

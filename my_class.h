@@ -12,6 +12,7 @@ private:
 public:
     LimitedStack();
     explicit LimitedStack(T element);
+    LimitedStack(const LimitedStack<T, n>& stack);
     ~LimitedStack();
 
     LimitedStack<T, n>& operator= (const LimitedStack<T, n>& stack) {
@@ -59,6 +60,13 @@ LimitedStack<T, n>::LimitedStack() : m_top(-1) {}
 template <typename T, const int n>
 LimitedStack<T, n>::LimitedStack(T element) {
     push(element);
+}
+
+template <typename T, const int n>
+LimitedStack<T, n>::LimitedStack(const LimitedStack<T, n>& stack) {
+    m_top = stack.m_top;
+    for (int i = 0; i < size(); ++i)
+        m_stack[i] = stack.m_stack[i];
 }
 
 template <typename T, const int n>
