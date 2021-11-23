@@ -15,7 +15,7 @@ public:
     LimitedStack(const LimitedStack<T, n>& stack);
     ~LimitedStack();
 
-    LimitedStack<T, n>& operator= (const LimitedStack<T, n>& stack) {
+    LimitedStack<T, n>& operator=(const LimitedStack<T, n>& stack) {
         if (this == &stack)
             return *this;
         m_top = stack.m_top;

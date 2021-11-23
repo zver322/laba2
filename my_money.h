@@ -17,8 +17,8 @@ public:
     friend std::istream& operator>>(std::istream& is, Money& money);
 
 
-    Money operator=(const Money& money);
-    Money operator=(const int& zero);
+    Money& operator=(const Money& money);
+    Money& operator=(const int& zero);
 };
 
 Money::Money (const long& rubles, const int& penny): 
@@ -42,13 +42,13 @@ std::istream& operator>>(std::istream& is, Money& money) {
     return is;
 }
 
-Money Money::operator=(const Money& money) {
+Money& Money::operator=(const Money& money) {
     m_rubles = money.m_rubles;
     m_penny = money.m_penny;
     return *this;
 }
 
-Money Money::operator=(const int& zero) {
+Money& Money::operator=(const int& zero) {
     m_rubles = zero;
     m_penny = zero;
     return *this;
